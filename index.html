@@ -27,7 +27,7 @@
                 const result = await response.json();
                 
                 // 공공데이터 JSON 구조에 맞춰 접근 (items.item 또는 row)
-                const data = result.ChildrensPlayFacilitiesRegion?.[1]?.row || [];
+                const data = result.response?.body?.items?.item || [];
                 
                 if (data.length === 0) {
                     document.getElementById('content').innerHTML = '데이터가 없습니다.';
@@ -35,6 +35,7 @@
                 }
 
                 let html = '<table><thead><tr><th>지역</th><th>합계</th><th>주택단지</th><th>도시공원</th><th>어린이집</th></tr></thead><tbody>';
+                console.log(data[0]);
                 data.forEach(item => {
                     html += `<tr>
                         <td>${item.ctprvn_nm || '전체'}</td>
