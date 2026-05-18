@@ -36,15 +36,15 @@
 
                 let html = '<table><thead><tr><th>지역</th><th>합계</th><th>주택단지</th><th>도시공원</th><th>어린이집</th></tr></thead><tbody>';
                 console.log(data[0]);
-                data.forEach(item => {
-                    html += `<tr>
-                        <td>${item.ctprvn_nm || '전체'}</td>
-                        <td>${item.sum_co}</td>
-                        <td>${item.house_distr_co}</td>
-                        <td>${item.cty_park_co}</td>
-                        <td>${item.daycare_center_co}</td>
-                    </tr>`;
-                });
+           data.forEach(item => {
+    html += `<tr>
+        <td>${item.CTPRVN_NM || '전체'}</td>
+        <td>${item.SUM_CO}</td>
+        <td>${item.HOUSE_DISTR_CO}</td>
+        <td>${item.CTY_PARK_CO}</td>
+        <td>${item.DAYCARE_CENTER_CO}</td>
+    </tr>`;
+});
                 html += '</tbody></table>';
                 document.getElementById('content').innerHTML = html;
             } catch (error) {
